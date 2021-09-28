@@ -16,7 +16,7 @@ router.post('/', (req, res) => {
         updateRecord(req, res);
 });
 
-
+//FungsiCreate
 function insertRecord(req,res){
     var employee = new Employee();
     employee.fullName = req.body.fullName;
@@ -42,6 +42,7 @@ function insertRecord(req,res){
     }
     )
 }
+//Fungsi Update (Mongoose)
 function updateRecord(req, res) {
     Employee.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, doc) => {
         if (!err) { res.redirect('employee/list'); }
@@ -58,6 +59,7 @@ function updateRecord(req, res) {
         }
     });
 }
+// Fungsi Read
 router.get('/list', (req, res) => {
     Employee.find((err, docs) => {
         if (!err) {
@@ -70,6 +72,7 @@ router.get('/list', (req, res) => {
         }
     });
 });
+// Fungsi Update
 router.get('/:id', (req, res) => {
     Employee.findById(req.params.id, (err, doc) => {
         if (!err) {
@@ -81,7 +84,7 @@ router.get('/:id', (req, res) => {
     });
 });
 
-
+//HandleValidation
 
 function handleValidationError(err, body) {
     for (field in err.errors) {
@@ -98,6 +101,7 @@ function handleValidationError(err, body) {
     }
 }
 
+//Fungsi Delete (Mongoose)
 router.get('/delete/:id', (req, res) => {
     Employee.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) {
