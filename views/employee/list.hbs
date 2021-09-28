@@ -1,0 +1,30 @@
+<h3><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Tambahkan Data</a> Daftar Karyawan</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nama Lengkap</th>
+            <th>Email</th>
+            <th>Nomor HP</th>
+            <th>Asal</th>
+            <th>Umur</th>
+            <th>Jabatan</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.fullName}}</td>
+            <td>{{this.email}}</td>
+            <td>{{this.mobile}}</td>
+            <td>{{this.city}}</td>
+            <td>{{this.age}}</td>
+            <td>{{this.position}}</td>
+            <td>
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil  fa-lg " style="color:black" aria-hidden="true"></i></a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Apakah Anda yakin ingin menghapus data karyawan ini?');"><i class="fa fa-trash fa-lg" aria-hidden="true" style="color:black"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+<h3>{{viewTitle}}</h3>
+<form  action="/employee" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{employee._id}}">
+    <div class="form-group">
+        <label >Nama Lengkap</label>
+        <input type="text" class="form-control" name="fullName" placeholder="Nama Lengkap" value="{{employee.fullName}}">
+        <div class="text-danger">
+            {{employee.fullNameError}}
+        </div>
+    </div>
+    <div class="form-group">
+        <label >Email</label>
+        <input type="text" class="form-control" name="email" placeholder="Email" value="{{employee.email}}">
+        <div class="text-danger">
+            {{employee.emailError}}
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Nomor HP</label>
+            <input type="text" class="form-control" name="mobile" placeholder="Nomor HP" value="{{employee.mobile}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Asal</label>
+            <input type="text" class="form-control" name="city" placeholder="Asal" value="{{employee.city}}">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Umur</label>
+            <input type="text" class="form-control" name="age" placeholder="Umur" value="{{employee.age}}">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Jabatan</label>
+            <input type="text" class="form-control" name="position" placeholder="Jabatan" value="{{employee.position}}">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-dark"><i class="fa fa-database"></i> Kirim</button>
+        <a class="btn btn-secondary" href="/employee/list"><i class="fa fa-list-alt"></i> Lihat Data</a>
+    </div>
+</form>
