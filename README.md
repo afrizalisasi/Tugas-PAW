@@ -33,5 +33,14 @@ For the *front-end* on the browser. Go to the Browser URL.
 ```bash
 http://localhost:3000/employee
 ```
+POST method representation
+![ ](route.post.PNG)
+router.post 
+
+![ ](code.png)
+
+
+
+
 
 
