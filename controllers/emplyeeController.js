@@ -14,6 +14,7 @@ router.post('/', (req, res) => {
         insertRecord(req, res);
         else
         updateRecord(req, res);
+        console.log("anda telah mengupdate")
 });
 
 //FungsiCreate
@@ -26,8 +27,13 @@ function insertRecord(req,res){
     employee.age = req.body.age;
     employee.position = req.body.position;
     employee.save((err,doc)=>{
-        if (!err)
+        if (!err){
+            
+            console.log("anda berhasil menambahkan data ke database mongo atlas");
             res.redirect('employee/list');
+            console.log(employee);
+            }
+            
         else{
             if (err.name == 'ValidationError') {
                 handleValidationError(err, req.body);
@@ -45,7 +51,9 @@ function insertRecord(req,res){
 //Fungsi Update (Mongoose)
 function updateRecord(req, res) {
     Employee.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, doc) => {
-        if (!err) { res.redirect('employee/list'); }
+        if (!err) { res.redirect('employee/list');
+        console.log("test"); }
+        
         else {
             if (err.name == 'ValidationError') {
                 handleValidationError(err, req.body);
@@ -61,7 +69,9 @@ function updateRecord(req, res) {
 }
 // Fungsi Read
 router.get('/list', (req, res) => {
+
     Employee.find((err, docs) => {
+        
         if (!err) {
             res.render("employee/list", {
                 list: docs
@@ -74,10 +84,12 @@ router.get('/list', (req, res) => {
 });
 // Fungsi Update
 router.get('/:id', (req, res) => {
+    console.log("test")
     Employee.findById(req.params.id, (err, doc) => {
         if (!err) {
+            console.log("Web berganti pada pengisian data diri baru")
             res.render("employee/addOrEdit", {
-                viewTitle: "Update Karyawan",
+                viewTitle: "Update Karyawans",
                 employee: doc
             });
         }
@@ -106,6 +118,7 @@ router.get('/delete/:id', (req, res) => {
     Employee.findByIdAndRemove(req.params.id, (err, doc) => {
         if (!err) {
             res.redirect('/employee/list');
+            console.log('Anda telah menekan tombol delete')
         }
         else { console.log('Error in employee delete :' + err); }
     });
