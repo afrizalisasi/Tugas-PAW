@@ -28,4 +28,4 @@ employeeSchema.path('email').validate((val) => {
     return emailRegex.test(val);
 }, 'Invalid e-mail.');
 
-mongoose.model('Employee',employeeSchema);
+module.exports = mongoose.model('Employee',employeeSchema);
