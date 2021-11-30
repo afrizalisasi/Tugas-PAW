@@ -1,4 +1,4 @@
-require(__dirname + '/models/db.js');
+require('./models/db');
 
 const express = require('express');
 const path = require('path');
