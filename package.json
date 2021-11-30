@@ -16,5 +16,8 @@
     "handlebars": "^4.5.0",
     "mongoose": "^6.0.8",
     "nodemon": "^2.0.13"
+  },
+  "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^2.4.0"
   }
 }
