@@ -1,7 +1,7 @@
 {
   "name": "versi-fix",
   "version": "1.0.0",
-  "description": "",
+  "description": "Tugas PAW CRUD Kelompok 20",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
@@ -20,5 +20,13 @@
   },
   "devDependencies": {
     "case-sensitive-paths-webpack-plugin": "^2.4.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syaharaninasution/paw-kelompok-20.git"
+  },
+  "bugs": {
+    "url": "https://github.com/syaharaninasution/paw-kelompok-20/issues"
+  },
+  "homepage": "https://github.com/syaharaninasution/paw-kelompok-20#readme"
 }
