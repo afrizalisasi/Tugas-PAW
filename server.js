@@ -1,12 +1,11 @@
-require('./models/db');
-
 const express = require('express');
 const path = require('path');
 const exphbs = require('express-handlebars');
 const bodyparser = require('body-parser');
 
 const employeeController = require('./controllers/emplyeeController');
-
+require('dotenv').config();
+require('./models/db');
 var app = express();
 app.use(bodyparser.urlencoded({
     extended: true
