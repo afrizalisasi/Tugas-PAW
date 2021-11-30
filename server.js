@@ -5,7 +5,7 @@ const bodyparser = require('body-parser');
 const mongoose = require('mongoose');
 const employeeController = require('./controllers/emplyeeController');
 const port = process.env.port || 3000;
-//require(__dirname + '/models/db.js');
+require('./models/db');
 var app = express();
 app.use(bodyparser.urlencoded({
     extended: true
